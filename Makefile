@@ -4,7 +4,7 @@ CONF_FILE=config.py
 
 # 'private' task for echoing instructions
 _pwd_prompt:
-	@echo "Contact jeresig@gmail.com for the password."
+	@echo "Contact Dave for the password."
 
 # to create conf/settings.json
 decrypt_conf: _pwd_prompt

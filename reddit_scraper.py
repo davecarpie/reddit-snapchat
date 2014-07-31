@@ -41,7 +41,7 @@ class RedditScraper():
 			ie = ImageEditor(image_name)
 			ie.add_text_to_image(post.title)
 			ie.save(image_name)
-			#self.snapchatter.send(image_name)
+			self.snapchatter.send(image_name)
 		else:
 			print("isn't image: " + post.title)
 
