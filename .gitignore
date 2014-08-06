@@ -4,6 +4,11 @@ venv/
 
 *.pyc
 
+reddit-snapchat/*.jpg
+reddit-snapchat/*.png
+reddit-snapchat/*.jpeg
+
+
 reddit-snapchat/config.py
 
 *.jpg
