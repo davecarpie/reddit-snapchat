@@ -24,7 +24,7 @@ class RedditScraper():
 						if not self.post_is_already_saved(post):
 							self.save_post(post)
 							time.sleep(10) # this is used to stop too many requests to snapchat at once
-			except Exception as e:
+			except IOError as e:
 				print (e)
 			time.sleep(60)
 
