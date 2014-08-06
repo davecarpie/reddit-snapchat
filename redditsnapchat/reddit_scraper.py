@@ -15,17 +15,17 @@ class RedditScraper():
 
 	def run(self):
 		while True:
-			try:
-				headers = {"User-Agent" : "Snaphat by ImOffTheRails"}
-				r = requests.get('http://www.reddit.com/r/pics.json', headers=headers)
-				if r.status_code == 200:
-					top_posts = [Post(post['data']) for post in r.json()['data']['children'][:3]]
-					for post in top_posts:
-						if not self.post_is_already_saved(post):
-							self.save_post(post)
-							time.sleep(10) # this is used to stop too many requests to snapchat at once
-			except IOError as e:
-				print (e)
+			#try:
+			headers = {"User-Agent" : "Snaphat by ImOffTheRails"}
+			r = requests.get('http://www.reddit.com/r/pics.json', headers=headers)
+			if r.status_code == 200:
+				top_posts = [Post(post['data']) for post in r.json()['data']['children'][:3]]
+				for post in top_posts:
+					if not self.post_is_already_saved(post):
+						self.save_post(post)
+						time.sleep(10) # this is used to stop too many requests to snapchat at once
+			#except IOError as e:
+			#	print (e)
 			time.sleep(60)
 
 	def post_is_already_saved(self, post):
